@@ -121,10 +121,7 @@ export const HorizontalLine = styled.hr`
 `;
 export const BoxContent = styled.div`
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    ${ props => props.height ? `height: ${ props.height }` : ''}
-    
+    ${ props => props.height ? `height: ${ props.height };` : ''}
 `;
 export const BoxSocialMedia = styled(BoxContainerHorizontal)`
     
@@ -212,7 +209,7 @@ export const ContactParagraph = styled.p`
 `;
 
 export const Icon = styled.span`
-    color: ${ palette.primary_color };
+    color: ${ palette.main_color };
     font-size: 20px;
 `;
 
@@ -226,6 +223,7 @@ export const HomeHeader = styled.div`
     height: 540px;
     background-image: url('${ props => props.url }');
     background-size: 100% 100%;
+    margin-bottom: 70px;
 `;
 
 export const HomeHeading = styled.h1`
@@ -242,6 +240,7 @@ export const BoxItem = styled.div`
     align-item: center;
     justify-content: center;
     flex-direction: column;
+    ${ props => props.home ? `padding: 70px 10px;` : ''}
 `;
 
 export const Subtitle = styled.p`
@@ -249,8 +248,11 @@ export const Subtitle = styled.p`
     color: #626262;
     margin: 0 auto 42px;
     text-align: center;
-    max-width: 860px;
-    color: ${ palette.text_light_color };
+    max-width: 880px;
+    ${ props => props.textColor === true ? `
+        color: ${ palette.main_color };
+        max-width: 90%;
+        ` : `color: ${palette.text_light_color };`};
     line-height: 1.4;
     box-sizing: border-box;
 `;
@@ -286,4 +288,74 @@ export const SectionBoxItem = styled.div`
     display: flex;
     flex-direction: column;
     ${ props => props.grow ? 'flex-grow: 1;' : '' }
+`;
+export const CenterHorizontalBoxItem = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+`;
+export const LeftHorizontalBoxItem = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: ${ props => props.grow };
+    flex-direction: column;
+`;
+export const RightHorizontalBoxItem = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px 10px;
+`;
+export const ClientImage = styled.img`
+    margin: 5px 10px;
+    max-width: 150px;
+    height: 80px;
+`;
+export const BoxSpaceAround = styled.div`
+    padding-left: 40px;
+    margin-top: 120px;
+`;
+export const SearchBox = styled.div`
+    display: flex;
+    padding-top: 20px;
+`;
+export const SearchInput = styled(InputMoreInfo)`
+    width: 60%;
+    margin-right: 10px;
+    margin-left: 5%;
+`;
+export const SearchButton = styled(SubscribeButton)`
+    margin-top: 12px;
+    width: 18%;
+`;
+
+export const CategoriesInput = styled.input`
+    padding: 30px;
+    background: ${ palette.main_color };
+    font-size: 40px;
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+    color: ${ palette.main_color };
+    
+    &:checked{
+        color: ${ palette.main_color };
+        background: ${ palette.main_color };
+    }
+`;
+export const CategoryLabel = styled.label`
+    font-size: 18px;
+    color: ${ palette.main_color };
+    font-family: Century Gothic;
+    font-weight: 400;
+    margin-top: -20px;
+    padding-bottom: 10px;
+
+    &:hover{
+        border-bottom: 2px solid ${ palette.main_color };
+        cursor: pointer;
+    }
 `;
