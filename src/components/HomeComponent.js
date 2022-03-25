@@ -1,5 +1,5 @@
 import React from "react";
-import { BoxContainerHorizontal, BoxContent, BoxItem, BoxItemHorizontal, BoxSpaceAround, CategoriesInput, CategoryLabel, CenterHorizontalBoxItem, Checkmark, ClientImage, FooterLink, LeftHorizontalBoxItem, ListItemVertical, ProductBox, ProductButton, ProductDescription, ProductDetails, ProductImage, ProductItem, ProductTitle, RightHorizontalBoxItem, SearchBox, SearchButton, SearchInput, SectionBoxItem, SubscribeButton, Subtitle, UnorderedList } from "../shared/common";
+import { BoxContainerHorizontal, BoxContent, BoxItem, BoxItemHorizontal, BoxSpaceAround, CategoriesInput, CategoryLabel, CenterHorizontalBoxItem, Checkmark, ClientImage, FooterLink, ImageCircle, LeftHorizontalBoxItem, ListItemVertical, ProductBox, ProductButton, ProductDescription, ProductDetails, ProductImage, ProductItem, ProductTitle, RightHorizontalBoxItem, SearchBox, SearchButton, SearchInput, SectionBoxItem, SubscribeButton, Subtitle, UnorderedList } from "../shared/common";
 import TopHome from "./home/TopHome";
 import amazon from '../logos/amazon.png';
 import google from '../logos/google.png';
@@ -100,22 +100,58 @@ const Home = () => {
                     </RightHorizontalBoxItem>
                 </LeftHorizontalBoxItem>                
            </BoxContent>
-           <BoxContent height={'800px'}>
-                <SectionBoxItem>
-                    
+           <BoxContent height={'800px'} className='m-t-4'>               
+                <SectionBoxItem className="grow-1" style={{ justifyContent: 'center' }}>
+                    <img src={require('../products/house.jpg')} className='right-self-alignment m-t-6' width="90%" height="60%" />
                 </SectionBoxItem>
-                <SectionBoxItem>
+                <SectionBoxItem className="grow-1" style={{ justifyContent: 'center'}}>
+                    <ProductItem className="box" height="500px" width="70%">
+                        <h1 style={{ width: '80%', alignSelf: 'center'}} className='m-t-4'>Scale Customer Support Via A Self-Service Knowledge Base.</h1>
+                        <Subtitle style={{color: '#000', textAlign: 'left', letterSpacing: '1.5px', width: '80%', fontSize: '18px'}}>
+                        Over 60% of US consumers prefer an automated self-service, such as a website or mobile app, for simple customer service tasks. Your customers are always on the go, they want to use your knowledge base, more than they want to contact support – the numbers speak for themselves, you just need to make that knowledge base awesome (again).</Subtitle>
+                    </ProductItem>
+                </SectionBoxItem>
+           </BoxContent>
+           <BoxContent height={'700px'} bg_img={{ imagUrl: shipment ,  bg_size: '100% 100%', }}>
+                <SectionBoxItem className='grow-1 center-self-alignment' style={{ justifyContent: 'center'}}>
+                    <ProductItem height="500px" width="60%">
+                        <h1 style={{ alignSelf: 'center'}}>MULTI-SHIPMENT SUPPORT</h1>
+                        <Subtitle style={{color: '#000', textAlign: 'left', letterSpacing: '1.5px', width: '70%', fontSize: '18px'}}>With the Helpjuice Analytics, we tell you not only what people are searching for and not finding (every single tool does this), but rather who those people are, what you should be writing in your knowledge base, which articles need improvement and so much more.</Subtitle>
+                        <Subtitle style={{color: '#000', textAlign: 'left', letterSpacing: '1.5px', width: '70%', fontSize: '18px'}}>With the Helpjuice Analytics, we tell you not only what people are searching for and not finding (every single tool does this), but rather who those people are, what you should be writing in your knowledge base, which articles need improvement and so much more.</Subtitle>
+                    </ProductItem>
+                </SectionBoxItem>
+                <SectionBoxItem className="grow-6">
                     
                 </SectionBoxItem>
            </BoxContent>
-           <BoxContent height={'1000px'} bg_img={{ imagUrl: shipment ,  bg_size: '100% 100%', }}>
-                <SectionBoxItem>
-                    
-                </SectionBoxItem>
-                <SectionBoxItem>
-                    
+           <BoxContent height={'600px'}>
+                <SectionBoxItem className="grow-1 center-items">
+                    <h1>OUR TEAM</h1>
+                    <CenterHorizontalBoxItem>
+                        <BoxContainerHorizontal className="v-align">
+                            <ImageCircle src={require('../products/profile pic.jpg')}/>
+                            <h4 className="m-auto">BYAMASU Patrick Paul</h4>
+                            <p className="m-auto">Senior Software Engineer</p>
+                        </BoxContainerHorizontal>
+                        <BoxContainerHorizontal className="v-align">
+                            <ImageCircle src={require('../products/product2.png')}/>
+                            <h4 className="m-auto">JOSPIN Amissi</h4>
+                            <p className="m-auto">S.E. and Co-founder</p>
+                        </BoxContainerHorizontal>
+                        <BoxContainerHorizontal className="v-align">
+                            <ImageCircle src={require('../products/house.jpg')}/>
+                            <h4 className="m-auto">HASSAN Ramadhan</h4>
+                            <p className="m-auto">Data Scientist</p>
+                        </BoxContainerHorizontal>
+                        <BoxContainerHorizontal className="v-align">
+                            <ImageCircle src={require('../products/product3.jpeg')}/>
+                            <h4 className="m-auto">LUNDENGE Theophile</h4>
+                            <p className="m-auto">Computer Engineer</p>
+                        </BoxContainerHorizontal>
+                    </CenterHorizontalBoxItem>
                 </SectionBoxItem>
            </BoxContent>
+           
        </React.Fragment>
     );
 };

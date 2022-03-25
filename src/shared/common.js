@@ -399,7 +399,9 @@ export const ProductBox = styled.div`
     cursor: pointer;
 `;
 export const ProductItem = styled.div`
-    width: 300px;
+    width: ${ props => props.width ? props.width : '300px' };
+    max-width: ${ props => props.width ? props.width : '300px' };
+    ${ props => props.width ? 'align-self: center;' : '' };
     display: flex;
     flex-direction: column;
     height: ${ props => props.height };
@@ -485,4 +487,11 @@ export const ProductButton = styled.button`
     &:hover{
         background: ${ palette.main_color };
     }
+`;
+
+export const ImageCircle = styled.img`
+    width: 150px;
+    height: 150px;
+    border-radius: 49%;
+    margin: 10px 30px;
 `;
