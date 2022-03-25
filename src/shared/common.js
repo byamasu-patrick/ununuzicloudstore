@@ -122,6 +122,7 @@ export const HorizontalLine = styled.hr`
 export const BoxContent = styled.div`
     display: flex;
     ${ props => props.height ? `height: ${ props.height };` : ''}
+    ${ props => props.bg_img ? `background-image: url('${ props.bg_img.imagUrl }'); background-size: ${ props.bg_img.bg_size }` : ''}
 `;
 export const BoxSocialMedia = styled(BoxContainerHorizontal)`
     
@@ -324,25 +325,54 @@ export const SearchInput = styled(InputMoreInfo)`
     width: 60%;
     margin-right: 10px;
     margin-left: 5%;
+    padding-left: 20px;
+    color: ${ palette.black_color };
+
+    &::placeholder{
+        color: ${ palette.black_color };
+    }
+    &:focus{
+        border: 1px solid ${ palette.black_color };
+    }
+    &:hover{
+        border: 1px solid ${ palette.black_color };
+    }
 `;
 export const SearchButton = styled(SubscribeButton)`
     margin-top: 12px;
     width: 18%;
+    
 `;
 
 export const CategoriesInput = styled.input`
-    padding: 30px;
-    background: ${ palette.main_color };
+    padding: 6px;
+    margin-top: -15px;
+    background: #ccc;
     font-size: 40px;
     -ms-transform: scale(1.5); /* IE */
     -moz-transform: scale(1.5); /* FF */
     -webkit-transform: scale(1.5); /* Safari and Chrome */
     -o-transform: scale(1.5); /* Opera */
     transform: scale(1.5);
-    color: ${ palette.main_color };
+    color: ${ palette.text_light_color };
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -o-appearance: none;
     
+    &:checked + span{
+        display: inline-block;
+    }
+    &:checked + label{
+        border-bottom: 2px solid ${ palette.main_color }; 
+    }    
+    &:hover{
+        cursor: pointer;
+    }
+    &:hover + label{
+        border-bottom: 2px solid ${ palette.main_color }; 
+    }
     &:checked{
-        color: ${ palette.main_color };
         background: ${ palette.main_color };
     }
 `;
@@ -357,5 +387,102 @@ export const CategoryLabel = styled.label`
     &:hover{
         border-bottom: 2px solid ${ palette.main_color };
         cursor: pointer;
+    }
+`;
+export const ProductBox = styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    padding: 0px;
+    cursor: pointer;
+`;
+export const ProductItem = styled.div`
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: ${ props => props.height };
+    background: ${ palette.text_light_color };
+    margin: 20px;
+    box-sizing: border-box;
+    padding: 0px;
+    cursor: pointer;
+    box-sizing: border-box;
+`;
+
+export const ProductImage = styled.img`
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    margin-top: 0px;
+    cursor: pointer;
+`;
+export const ProductTitle = styled.h2`
+    font-weight: bold;
+    font-family: Century Gothic;
+    letter-spacing: 1px;
+    color: ${ palette.main_color };
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px 10px;
+    width: auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid ${ palette.main_color };
+`;
+export const ProductDescription = styled.p`
+    font-family: Century Gothic;
+    max-width: 280px;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: ${ palette.main_color };
+    cursor: pointer;
+    box-sizing: border-box;
+`;
+
+export const ProductDetails = styled.button`
+    width: 120px;
+    max-width: 100px;
+    height: 30px;
+    color: ${ palette.text_light_color };
+    background: ${ palette.main_color };
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    border: none;
+    float: right;
+    margin-top: 14px;
+    letter-spacing: 1px;
+    position: relative;
+    left: 190px;
+    margin-right: 20px;
+    
+
+    &:hover{
+        background: ${ palette.text_light_color };
+        color: ${ palette.main_color };
+        border: 1px solid ${ palette.main_color };
+    }
+`;
+export const ProductButton = styled.button`
+    
+    height: 30px;
+    color: ${ palette.text_light_color };
+    background: ${ palette.primary_color };
+    padding: 8px 14px;
+    font-size: 13px;
+    font-weight: 400;
+    border: none;
+    float: right;
+    margin-top: 14px;
+    letter-spacing: 1px;
+    position: absolute;
+    
+
+    &:hover{
+        background: ${ palette.main_color };
     }
 `;
